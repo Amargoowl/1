@@ -4,20 +4,20 @@
  */
 module.exports = function(date) {
     var _date = new Date(date);
-    var DateCalc = {
-        date: _date,
-
+    console.log(_date.toISOString());
+    console.log(_date.toDateString());
+    return {
         add: function(count, scale) {
 
             return this;
         },
-        subtract: function(count, mesurment) {
+        subtract: function(count, scale) {
 
             return this;
         },
         get value() {
 
-            return `${year}-${month}-${day} ${hour}:${minute}`;
+            return _date.toISOString().slice(0, 16).replace('T', ' ');
         }
     }
-};
+}

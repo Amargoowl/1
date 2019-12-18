@@ -4,7 +4,7 @@ var assert = require('assert');
 // Подключаем свою функцию
 var date = require('./index.js');
 
-var time = date('2017-05-16 13:45')
+var time = date('2017-05-16 00:45')
     .add(24, 'hours')
     .subtract(1, 'months')
     .add(3, 'days')
@@ -21,7 +21,7 @@ assert.deepEqual(
 // assert.throws принимает функцию и
 // проверяет, что она выбрасывает исключение определенного типа
 assert.throws(
-    function () {
+    function() {
         date('2017-05-16 13:45').add(2, 'light-years');
     },
     TypeError,
@@ -31,7 +31,7 @@ assert.throws(
 );
 
 assert.throws(
-    function () {
+    function() {
         date('2017-05-16 13:45').add(-2, 'years');
     },
     TypeError,
